@@ -1,5 +1,5 @@
 ```bash
-sudo apt install zsh git curl lsd btop -y
+sudo apt install zsh git curl lsd btop tmux vim -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # Do you want to change your default shell to zsh? [Y/n] y
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
