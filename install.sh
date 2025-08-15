@@ -19,13 +19,13 @@ curl -fsSL https://raw.githubusercontent.com/Lindwen/dotfiles/refs/heads/main/.v
 
 sed -i '/^# HIST_STAMPS="mm\/dd\/yyyy"/a HIST_STAMPS="%d-%m-%Y %H:%M:%S"' "$HOME/.zshrc"
 
-git clone https://github.com/zsh-users/zsh-autosuggestions \
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions \
     "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git \
     "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
-git clone https://github.com/fdellwing/zsh-bat.git \
+git clone --depth=1 https://github.com/fdellwing/zsh-bat.git \
     "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-bat"
-git clone https://github.com/MichaelAquilina/zsh-you-should-use.git \
+git clone --depth=1 https://github.com/MichaelAquilina/zsh-you-should-use.git \
     "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/you-should-use"
 
 sed -i 's/^plugins=(\(.*\))/plugins=(\1 docker zsh-autosuggestions zsh-syntax-highlighting zsh-bat you-should-use)/' "$HOME/.zshrc"
