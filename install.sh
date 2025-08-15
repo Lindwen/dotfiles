@@ -4,7 +4,7 @@ set -e
 sudo apt update
 sudo apt install -y zsh git curl lsd btop tmux vim bat
 
-chsh -s "$(command -v zsh)"
+sudo chsh -s "$(command -v zsh)" "$USER"
 
 RUNZSH=no zsh -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended'
 
