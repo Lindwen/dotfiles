@@ -30,4 +30,6 @@ git clone --depth=1 https://github.com/MichaelAquilina/zsh-you-should-use.git \
 
 sed -i 's/^plugins=(\(.*\))/plugins=(\1 docker zsh-autosuggestions zsh-syntax-highlighting zsh-bat you-should-use)/' "$HOME/.zshrc"
 
-exec zsh
+echo -e '\n# Set up fzf key bindings and fuzzy completion\nsource <(fzf --zsh)' >> "$HOME/.zshrc"
+
+echo -e "\e[32m✅ Installation complete!\e[0m \e[33mRun 'zsh' or restart your session for the changes to take effect.\e[0m"
