@@ -12,12 +12,15 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
     "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 sed -i 's|^ZSH_THEME=".*"|ZSH_THEME="powerlevel10k/powerlevel10k"|' "$HOME/.zshrc"
 
-mkdir -p "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
-curl -fsSL https://raw.githubusercontent.com/Lindwen/dotfiles/refs/heads/main/aliases.zsh -o "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/aliases.zsh"
-curl -fsSL https://raw.githubusercontent.com/Lindwen/dotfiles/refs/heads/main/.tmux.conf -o "$HOME/.tmux.conf"
-curl -fsSL https://raw.githubusercontent.com/Lindwen/dotfiles/refs/heads/main/.vimrc -o "$HOME/.vimrc"
+git clone --depth=1 https://github.com/Lindwen/dotfiles.git /tmp/dotfiles
 
-sed -i '/^# HIST_STAMPS="mm\/dd\/yyyy"/a HIST_STAMPS="%d-%m-%Y %H:%M:%S"' "$HOME/.zshrc"
+mkdir -p "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+
+cp -r /tmp/dotfiles/zsh/* "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/"
+cp /tmp/dotfiles/.tmux.conf "$HOME/.tmux.conf"
+cp /tmp/dotfiles/.vimrc "$HOME/.vimrc"
+
+rm -rf /tmp/dotfiles
 
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions \
     "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
@@ -29,8 +32,5 @@ git clone --depth=1 https://github.com/MichaelAquilina/zsh-you-should-use.git \
     "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/you-should-use"
 
 sed -i 's/^plugins=(\(.*\))/plugins=(\1 docker zsh-autosuggestions zsh-syntax-highlighting zsh-bat you-should-use)/' "$HOME/.zshrc"
-
-echo -e '\n# Set up fzf key bindings and fuzzy completion\nsource <(fzf --zsh)' >> "$HOME/.zshrc"
-echo -e '\n# Set up zoxide \neval "$(zoxide init zsh)"' >> "$HOME/.zshrc"
 
 echo -e "\e[32m✅ Installation complete!\e[0m \e[33mRun 'zsh' or restart your session for the changes to take effect.\e[0m"

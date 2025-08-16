@@ -1,0 +1,1 @@
+HIST_STAMPS="%d-%m-%Y %H:%M:%S
