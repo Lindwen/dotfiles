@@ -2,7 +2,7 @@
 set -e
 
 sudo apt update
-sudo apt install -y zsh git curl lsd btop tmux vim bat fzf
+sudo apt install -y zsh git curl lsd btop tmux vim bat fzf zoxide
 
 sudo chsh -s "$(command -v zsh)" "$USER"
 
@@ -31,5 +31,6 @@ git clone --depth=1 https://github.com/MichaelAquilina/zsh-you-should-use.git \
 sed -i 's/^plugins=(\(.*\))/plugins=(\1 docker zsh-autosuggestions zsh-syntax-highlighting zsh-bat you-should-use)/' "$HOME/.zshrc"
 
 echo -e '\n# Set up fzf key bindings and fuzzy completion\nsource <(fzf --zsh)' >> "$HOME/.zshrc"
+echo -e '\n# Set up zoxide \neval "$(zoxide init zsh)"' >> "$HOME/.zshrc"
 
 echo -e "\e[32m✅ Installation complete!\e[0m \e[33mRun 'zsh' or restart your session for the changes to take effect.\e[0m"
