@@ -2,7 +2,7 @@
 set -e
 
 sudo apt update
-sudo apt install -y zsh git curl lsd btop tmux vim bat
+sudo apt install -y zsh git curl lsd btop tmux vim bat fzf
 
 sudo chsh -s "$(command -v zsh)" "$USER"
 
