@@ -24,6 +24,8 @@ mkdir -p "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 cp -r /tmp/dotfiles/zsh/* "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/"
 cp /tmp/dotfiles/.tmux.conf "$HOME/.tmux.conf"
 cp /tmp/dotfiles/.vimrc "$HOME/.vimrc"
+cp /tmp/dotfiles/.zshrc "$HOME/.zshrc"
+cp /tmp/dotfiles/.p10k.zsh "$HOME/.p10k.zsh"
 
 rm -rf /tmp/dotfiles
 
@@ -38,7 +40,7 @@ git clone --depth=1 https://github.com/MichaelAquilina/zsh-you-should-use.git \
     "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/you-should-use"
 
 # Configure .zshrc
-sed -i '/^# HIST_STAMPS="mm\/dd\/yyyy"/a HIST_STAMPS="%d-%m-%Y %H:%M:%S"' "$HOME/.zshrc"
-sed -i 's/^plugins=(\(.*\))/plugins=(\1 docker zsh-autosuggestions zsh-syntax-highlighting zsh-bat you-should-use)/' "$HOME/.zshrc"
+# sed -i '/^# HIST_STAMPS="mm\/dd\/yyyy"/a HIST_STAMPS="%d-%m-%Y %H:%M:%S"' "$HOME/.zshrc"
+# sed -i 's/^plugins=(\(.*\))/plugins=(\1 docker zsh-autosuggestions zsh-syntax-highlighting zsh-bat you-should-use)/' "$HOME/.zshrc"
 
 echo -e "\e[32m✅ Installation complete!\e[0m \e[33mRun 'zsh' or restart your session for the changes to take effect.\e[0m"
