@@ -37,6 +37,6 @@ git clone --depth=1 https://github.com/fdellwing/zsh-bat.git \
 git clone --depth=1 https://github.com/MichaelAquilina/zsh-you-should-use.git \
     "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/you-should-use"
 git clone --depth=1 https://github.com/Pilaton/OhMyZsh-full-autoupdate.git \
-    "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/ohmyzsh-full-autoupdate"
+    "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/ohmyzsh-full-autoupdate"
 
 echo -e "\e[32m✅ Installation complete!\e[0m \e[33mRun 'zsh' or restart your session for the changes to take effect.\e[0m"
