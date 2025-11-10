@@ -11,7 +11,7 @@ sudo chsh -s "$(command -v zsh)" "$USER"
 mkdir -p /tmp/fzf-install
 curl -L -o /tmp/fzf-install/fzf-0.66.1-linux_arm64.tar.gz \
   https://github.com/junegunn/fzf/releases/download/v0.66.1/fzf-0.66.1-linux_arm64.tar.gz
-tar -xzf /tmp/fzf-install/fzf-0.66.1-linux_arm64.tar.gz
+sudo tar -xzf /tmp/fzf-install/fzf-0.66.1-linux_arm64.tar.gz
 sudo mv /tmp/fzf-install/fzf /usr/local/bin/
 sudo chmod +x /usr/local/bin/fzf
 
