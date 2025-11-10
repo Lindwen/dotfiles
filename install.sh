@@ -15,6 +15,8 @@ sudo tar -xzf /tmp/fzf-install/fzf-0.66.1-linux_arm64.tar.gz -C /tmp/fzf-install
 sudo mv /tmp/fzf-install/fzf /usr/local/bin/
 sudo chmod +x /usr/local/bin/fzf
 
+rm -rf /tmp/fzf-install
+
 # Install OhMyZsh
 RUNZSH=no zsh -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended'
 
