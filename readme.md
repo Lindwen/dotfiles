@@ -1,4 +1,4 @@
-### Work on ubuntu
+### Work only on Ubuntu ARM64
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Lindwen/dotfiles/main/install.sh | bash
