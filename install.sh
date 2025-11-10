@@ -2,10 +2,18 @@
 set -e
 
 # Install packages
-sudo apt update && sudo apt install -y zsh git curl lsd btop tmux vim bat fzf zoxide
+sudo apt update && sudo apt install -y zsh git curl lsd btop tmux vim bat zoxide
 
 # Change shell
 sudo chsh -s "$(command -v zsh)" "$USER"
+
+# Install FZF (20251110 - I don't use package manager because the version on Ubuntu 24.04 doesn't work with fzf -zsh)
+mkdir -p /tmp/fzf-install
+curl -L -o /tmp/fzf-install/fzf-0.66.1-linux_arm64.tar.gz \
+  https://github.com/junegunn/fzf/releases/download/v0.66.1/fzf-0.66.1-linux_arm64.tar.gz
+tar -xzf /tmp/fzf-install/fzf-install/fzf-0.66.1-linux_arm64.tar.gz
+sudo mv /tmp/fzf-install/fzf /usr/local/bin/
+sudo chmod +x /usr/local/bin/fzf
 
 # Install OhMyZsh
 RUNZSH=no zsh -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended'
