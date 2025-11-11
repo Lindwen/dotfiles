@@ -8,3 +8,4 @@ Some tips:
 
 - Use `Ctrl + R` to search your command history
 - Use `cat -p <file>` to view a file without numbered lines
+- Use `rcat <file>` to view a file with original cat command
