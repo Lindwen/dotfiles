@@ -21,7 +21,8 @@ curl -L -o /tmp/fastfetch-linux-aarch64.deb \
   https://github.com/fastfetch-cli/fastfetch/releases/download/2.55.0/fastfetch-linux-aarch64.deb
 sudo apt install /tmp/fastfetch-linux-aarch64.deb
 rm /tmp/fastfetch-linux-aarch64.deb
-fastfetch --gen-config
+# Configure fastfetch
+mkdir -p "$HOME/.config/fastfetch"
 curl -L -o "$HOME/.config/fastfetch/config.jsonc" \
   https://raw.githubusercontent.com/harilvfs/fastfetch/refs/heads/old-days/fastfetch/config.jsonc
 
