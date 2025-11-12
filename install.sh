@@ -21,6 +21,9 @@ curl -L -o /tmp/fastfetch-linux-aarch64.deb \
   https://github.com/fastfetch-cli/fastfetch/releases/download/2.55.0/fastfetch-linux-aarch64.deb
 sudo apt install /tmp/fastfetch-linux-aarch64.deb
 rm /tmp/fastfetch-linux-aarch64.deb
+fastfetch --gen-config
+curl -L -o "$HOME/.config/fastfetch/config.jsonc" \
+  https://raw.githubusercontent.com/harilvfs/fastfetch/refs/heads/old-days/fastfetch/config.jsonc
 
 # Install OhMyZsh
 RUNZSH=no zsh -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended'
