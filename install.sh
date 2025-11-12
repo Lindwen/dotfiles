@@ -39,7 +39,8 @@ cp /tmp/dotfiles/.tmux.conf "$HOME/.tmux.conf"
 cp /tmp/dotfiles/.vimrc "$HOME/.vimrc"
 cp /tmp/dotfiles/.zshrc "$HOME/.zshrc"
 cp /tmp/dotfiles/.p10k.zsh "$HOME/.p10k.zsh"
-cp /tmp/dotfiles/99-fastfetch-motd "/etc/update-motd.d/99-fastfetch-motd"
+sudo cp /tmp/dotfiles/99-fastfetch-motd "/etc/update-motd.d/99-fastfetch-motd"
+sudo chmod +x /etc/update-motd.d/99-fastfetch-motd
 
 rm -rf /tmp/dotfiles
 
