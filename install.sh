@@ -14,8 +14,13 @@ curl -L -o /tmp/fzf-install/fzf-0.66.1-linux_arm64.tar.gz \
 sudo tar -xzf /tmp/fzf-install/fzf-0.66.1-linux_arm64.tar.gz -C /tmp/fzf-install
 sudo mv /tmp/fzf-install/fzf /usr/local/bin/
 sudo chmod +x /usr/local/bin/fzf
-
 rm -rf /tmp/fzf-install
+
+# Install fastfetch
+curl -L -o /tmp/fastfetch-linux-aarch64.deb \
+  https://github.com/fastfetch-cli/fastfetch/releases/download/2.55.0/fastfetch-linux-aarch64.deb
+sudo apt install /tmp/fastfetch-linux-aarch64.deb
+rm /tmp/fastfetch-linux-aarch64.deb
 
 # Install OhMyZsh
 RUNZSH=no zsh -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended'
