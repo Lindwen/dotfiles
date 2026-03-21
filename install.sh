@@ -2,7 +2,7 @@
 set -e
 
 # Install packages
-sudo apt update && sudo apt install -y zsh git curl lsd btop tmux vim bat zoxide
+sudo apt update && sudo apt install -y zsh git curl lsd htop btop tmux vim bat zoxide
 
 # Change shell
 sudo chsh -s "$(command -v zsh)" "$USER"
