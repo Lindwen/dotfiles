@@ -44,6 +44,10 @@ cp /tmp/dotfiles/.vimrc "$HOME/.vimrc"
 cp /tmp/dotfiles/.zshrc "$HOME/.zshrc"
 cp /tmp/dotfiles/.p10k.zsh "$HOME/.p10k.zsh"
 
+mkdir -p "$HOME/.config/htop"
+cp /tmp/dotfiles/.config/htop/htoprc "$HOME/.config/htop"
+
+# Cleanup
 rm -rf /tmp/dotfiles
 
 # Install zsh plugins
